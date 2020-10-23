@@ -20,7 +20,7 @@
   set_fact:
     gitlab_repo_file_list: "{{ gitlab_repo_file_list }} + {{ response.json | json_query('[].name') }}"
 - include_role:
-    name: gitlab_tree
+    name: xiaopeng163.ansible_gitlab_tree
   vars:
     page_num: "{{ response.x_next_page }}"
   when: response.x_next_page
